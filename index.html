@@ -13,6 +13,7 @@
             <button><img src="images/search.png"></button>
         </div>
         <div class="error">
+            <img src="images/404.png" class="error-icon">
             <p>Invalid City Name</p>
         </div>
         <div class="weather">
@@ -45,7 +46,6 @@
         const searchBtn = document.querySelector(".search button");
         const weatherIcon = document.querySelector(".weather-icon");
       
-      
         async function checkweather(city){
             const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
             
@@ -54,6 +54,7 @@
                 document.querySelector(".weather").style.display = "none";
             }else{
                 var data = await response.json();
+                console.log(data);
 
                 document.querySelector(".city").innerHTML = data.name;
                 document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°C";
@@ -77,12 +78,16 @@
                 }
                 document.querySelector(".weather").style.display = "block";    
                 document.querySelector(".error").style.display = "none";
+
             }
 
      }
      searchBtn.addEventListener("click", ()=>{
             checkweather(searchBox.value);
         });
+     searchBox.addEventListener("enter",()=>{
+        checkweather(searchBox.value);
+     });
         
     
     </script>

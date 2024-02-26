@@ -4,17 +4,23 @@
     box-sizing: border-box;
 }
 body{
-    background: rgb(16, 24, 26);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url('images/background.jpg');
+    background-size: cover;
+    background-position: center;
 }
 .card{
     width: 90%;
     max-width: 470px;
-    color: #fff;
+    color: rgb(243, 237, 237);
     margin: 100px auto 0;
     padding: 40px 35px;
     text-align: center;
     border-radius: 20px;
-    background: linear-gradient(135deg,#00feba,#5b548a);
+    background: rgba(255,255,255,.1);
 }
 .search{
     width: 100%;
@@ -84,8 +90,11 @@ body{
 .error{
     display: none;
     margin-top: 10px;
-    text-align: left;
     margin-left: 10px;
-    font-size: 14px;
-   
+    font-size: 24px;
+}
+.error img{
+    width: 180px;
+    margin-top: 30px;
+    align-items: center;
 }
